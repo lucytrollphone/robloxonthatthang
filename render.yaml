@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: ugc-proxy
+    env: python
+    buildCommand: ""
+    startCommand: "python ugc_proxy.py"
+    plan: free
