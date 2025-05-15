@@ -16,4 +16,4 @@ def get_group_items(group_id):
     return jsonify(response.json())
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run()
