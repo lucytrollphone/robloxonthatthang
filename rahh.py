@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 import requests
+import os
 
 app = Flask(__name__)
 
@@ -16,4 +17,6 @@ def get_group_items(group_id):
     return jsonify(response.json())
 
 if __name__ == '__main__':
-    app.run()
+    # THIS is the key fix — use Render's assigned port
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
